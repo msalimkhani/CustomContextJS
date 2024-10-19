@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Context Menu Test</title>
+    <script src="../src/js/contextMenu.js"></script>
+    <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body>
+    <ul class="testList">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+</body>
+<script>
+    document.querySelectorAll(".testList li").forEach((elem)=>{
+        var menu = ContextMenu.getInstance(elem.innerHTML);
+    menu.attachToElement(elem);
+    menu.addMenuItem("Open", (e)=>{
+        console.log("Open Clicked, " + elem.innerHTML);
+    });
+    menu.addDivider();
+    menu.addMenuItem("Edit", (e)=>{
+        console.log("Edit Clicked, " + elem.innerHTML);
+    });
+    menu.initialize();
+    });
+</script>
+</html>

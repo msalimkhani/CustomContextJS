@@ -1,0 +1,29 @@
+.ctx-menu{
+    width: 150px;
+    background-color: #d3d3d3;
+    font-family: Tahoma;
+    border: 0.5px solid #a3a3a3;
+    border-radius: 7.14px;
+    display: none;
+    position: absolute;
+    z-index: 100;
+}
+.ctx-menu-item{
+    cursor: pointer;
+}
+.ctx-menu tbody{
+    display: flex;
+    flex-direction: column;
+    margin-left: -1.8px;
+}
+.ctx-menu-item:hover{
+    background-color: #a6a6a6;
+}
+.ctx-menu table, .ctx-menu tbody, .ctx-menu tr, .ctx-menu td{
+    width: inherit;
+    user-select: none;
+}
+
+.ctx-menu-item.divider{
+    border-bottom: 0.5px solid #a3a3a3;
+}
