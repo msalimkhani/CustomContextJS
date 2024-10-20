@@ -37,10 +37,15 @@ class ContextMenu {
         this.#attachedElem = elem;
         
     }
-
+    static closeAllMenus(){
+        this.#instances.forEach((elem)=>{
+            elem.object.closeMenu();
+        });
+    }
     renderMenu(x, y){
         if(this.#ctxMenu)
         {
+            ContextMenu.closeAllMenus();
             this.#ctxMenu.style.top = y;
             this.#ctxMenu.style.left = x;
             this.#ctxMenu.style.display="block";
